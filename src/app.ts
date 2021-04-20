@@ -4,7 +4,9 @@ let server = net.createServer( connection => {
     console.log("connection made ...")
     connection.on("data", data => {
         // run this when data is received
-        console.log(data.toString()); // prints the data
+        console.log("=============================>", data.toString()); // prints the data
+
+        connection.write(data.toString())
 
     });
 })
