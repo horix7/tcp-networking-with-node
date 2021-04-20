@@ -5,6 +5,7 @@ let server = net.createServer( connection => {
     connection.on("data", data => {
         // run this when data is received
         console.log(data.toString()); // prints the data
+
     });
 })
 
