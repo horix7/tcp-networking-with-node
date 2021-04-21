@@ -1,33 +1,21 @@
 import net from 'net'
 import { createUser } from './account/account'
 import { createRoom } from './rooms/rooms'
+import prompt from 'prompt'
 
 
 let server = net.createServer( connection => {
+    connection.write(connection.remoteFamily + " " +connection.remoteAddress+ ":" + connection.remotePort)
+    connection.write("\nprovide your user name to continue: ")
 
-    connection.on("data", data => {
-
-        let command = data.toString().split(":")[1]
-        
-        console.log("------------------------->", command)
-
-        switch (command) {
-            case "login":
-                connection.write(data.toString())
-                createUser("newuser")
-                break;
-        
-            default:
-                createUser("newuser")
-
-                break;
-        }
-
+    connection.on("data", (data: any) => {
+        const command = data.toString()
+        console.log(command)
 
     });
 })
 
 server.listen(5000, () => {
-    console.log("server listening to port")
+    console.log("server listening to port 5000")
 })
 
