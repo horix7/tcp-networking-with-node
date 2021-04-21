@@ -13,6 +13,8 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
-    "net": "^1.0.2"
+    "mysql": "^2.18.1",
+    "net": "^1.0.2",
+    "node-persist": "^3.1.0"
   }
 }
