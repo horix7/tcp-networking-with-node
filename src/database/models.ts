@@ -4,7 +4,7 @@ export class UserModel {
 
     public createUser = async (username: string):Promise<any> => {
 
-        var sql = `INSERT INTO users (name) VALUES (\'${username}\')`;
+        var sql = `INSERT INTO users (username, created_at) VALUES (\'${username}\', \'${ new Date().getTime()}\')`;
 
         await database.query(sql,  (err: any, result: any) => {
           if (err) throw err;

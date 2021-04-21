@@ -9,13 +9,16 @@ let server = net.createServer( connection => {
         let command = data.toString().split(":")[1]
         
         console.log("------------------------->", command)
+
         switch (command) {
-            case "signup":
+            case "login":
                 connection.write(data.toString())
                 createUser("newuser")
                 break;
         
             default:
+                createUser("newuser")
+
                 break;
         }
 

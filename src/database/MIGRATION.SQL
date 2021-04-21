@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `users` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(255) NOT NULL,
     `created_at` DATETIME NOT NULL,
-    `updated_at` DATETIME NOT NULL,
+    `updated_at` DATETIME,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `rooms` (
     `madeby` VARCHAR(255) NOT NULL,
     `key` INT NOT NULL,
     `created_at` DATETIME NOT NULL,
-    `updated_at` DATETIME NOT NULL,
+    `updated_at` DATETIME,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
@@ -21,5 +21,5 @@ CREATE TABLE IF NOT EXISTS `rooms` (
 
 
 
--- DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `users`;
 
