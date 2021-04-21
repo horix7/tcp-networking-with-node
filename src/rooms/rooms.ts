@@ -1,13 +1,10 @@
+import { Rooms } from "../database/models";
 
-class Rooms {
+const room = new Rooms()
 
-    public createRoom = () => {
+export const createUser = async (body: any) => {
+    const new_room = await  room.createRoom(body)
 
-    }
-
-    public desctroyRoom = () => {
-
-    }
-
-    
+    return new_room
 }
+

@@ -1,10 +1,14 @@
 import net from 'net'
+import { createUser } from './account/account'
+import { createRoom } from './rooms/rooms'
+
 
 let server = net.createServer( connection => {
     console.log("connection made ...")
     connection.on("data", data => {
-        // run this when data is received
-        console.log("=============================>", data.toString()); // prints the data
+
+
+
 
         connection.write(data.toString())
 

@@ -2,8 +2,14 @@ import database from './database'
 
 export class UserModel {
 
-    public createUser = async (username: string) => {
-        
+    public createUser = async (username: string):Promise<any> => {
+
+        var sql = `INSERT INTO users (name) VALUES (\'${username}\')`;
+
+        await database.query(sql,  (err: any, result: any) => {
+          if (err) throw err;
+          console.log("1 record inserted", result);
+        });
     }
 }
 
